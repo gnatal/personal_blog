@@ -5,7 +5,7 @@ import NavHeader from './Navheader';
 import NavBarWeb from './web';
 
 function navBar({ blogName }: { blogName: string}) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
