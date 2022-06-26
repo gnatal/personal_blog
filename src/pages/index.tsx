@@ -1,9 +1,10 @@
 import React from 'react';
-import NavBar from '../components/navBar';
+import SideMenu from '../components/SideMenu';
+import NavBar from '../components/NavBar';
 
 function Home() {
   return (
-    <NavBar menu="Bar that I've set" blogName="Natal ideias" />
+    <NavBar blogName="Natal ideias" />
   );
 }
 
