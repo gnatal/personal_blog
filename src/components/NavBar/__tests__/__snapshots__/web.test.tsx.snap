@@ -11,13 +11,7 @@ exports[`It should write an span in the nav header 1`] = `
       className="block mt-4 md:mt-2 text-md sm:inline-block lg:mt-0 text-teal-100 hover:text-white mr-4"
       href="/"
     >
-      inicio
-    </a>
-    <a
-      className="block mt-4 md:mt-2 text-md sm:inline-block lg:mt-0 text-teal-100 hover:text-white mr-4"
-      href="/posts"
-    >
-      blog
+      início
     </a>
     <a
       className="block mt-4 md:mt-2 text-md sm:inline-block lg:mt-0 text-teal-100 hover:text-white mr-4"
@@ -25,13 +19,19 @@ exports[`It should write an span in the nav header 1`] = `
     >
       sobre
     </a>
+    <a
+      className="block mt-4 md:mt-2 text-md sm:inline-block lg:mt-0 text-teal-100 hover:text-white mr-4"
+      href="/posts"
+    >
+      blog
+    </a>
   </div>
   <div>
     <a
       className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 md:mt-0"
       href="/login"
     >
-      Entrar
+      login
     </a>
   </div>
 </div>
