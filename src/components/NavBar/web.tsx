@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBarWebLink from '../navBarWebLink';
+import NavBarWebLink from '../NavBarWebLink';
 
 function NavBarWeb() {
   return (
