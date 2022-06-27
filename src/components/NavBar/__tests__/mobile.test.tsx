@@ -4,7 +4,7 @@ import NavBarMobile from '../mobile';
 
 test('It should write an span in the nav header', () => {
   const component = renderer.create(
-    <NavBarMobile />,
+    <NavBarMobile isOpen={false} setIsOpen={() => {}} />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
