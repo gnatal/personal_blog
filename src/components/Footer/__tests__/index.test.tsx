@@ -4,7 +4,7 @@ import Footer from '..';
 
 afterAll(cleanup);
 
-test('Disclaimer should be a paragraph', () => {
+test('Footer should container only one footer tag', () => {
   const { container } = render(
     <Footer />,
   );
