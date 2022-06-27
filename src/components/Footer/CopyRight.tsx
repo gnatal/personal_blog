@@ -1,7 +1,7 @@
 import React from 'react';
 
 const COPY_RIGHT_LINK = 'https://github.com/gnatal';
-const BRAND_NAME = 'https://github.com/gnatal';
+const BRAND_NAME = 'Natal Inc';
 
 export default function Copyright() {
   return (
