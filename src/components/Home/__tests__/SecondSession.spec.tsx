@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
-import SecondSection from '../SecondSession';
+import SecondSection from '../SecondSection';
 
 describe('Testing the first section', () => {
   afterAll(cleanup);

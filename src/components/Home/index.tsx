@@ -1,11 +1,11 @@
 import React from 'react';
-import FisrtSection from './FirstSection/indext';
-import SecondSession from './SecondSession';
+import FirstSection from './FirstSection';
+import SecondSession from './SecondSection';
 
 export default function Home() {
   return (
     <div>
-      <FisrtSection />
+      <FirstSection />
       <SecondSession />
     </div>
   );
