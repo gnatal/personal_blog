@@ -1,11 +1,12 @@
 import React from 'react';
 import SideMenu from '../components/SideMenu';
 import NavBar from '../components/NavBar';
+import Home from '../components/Home';
 
-function Home() {
+function HomePage() {
   return (
-    <p>Home</p>
+    <Home />
   );
 }
 
-export default Home;
+export default HomePage;
