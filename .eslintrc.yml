@@ -45,3 +45,9 @@ rules: {
     }
   ]
 }
+# these settings allow me to do absolute imports (also I need the baseURL int he tsconfig.json)
+settings: 
+  import/resolver:
+    node:
+      paths: ['src']
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
