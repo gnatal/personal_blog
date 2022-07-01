@@ -3,8 +3,10 @@ import React, { useEffect, useState } from 'react';
 interface ITextInput {
     elementId: string;
     label: string;
-    roundTop: boolean;
-    roundBottom: boolean;
+    // eslint-disable-next-line react/require-default-props
+    roundTop?: boolean;
+    // eslint-disable-next-line react/require-default-props
+    roundBottom?: boolean;
 }
 
 // Remeber to find out a solution to deal with this bunch of classes
