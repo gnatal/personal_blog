@@ -25,6 +25,12 @@ rules: {
   react/jsx-filename-extension: [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
   #this line allows spread operator
   react/jsx-props-no-spreading: 'off',
+  #this line allows using label for inputs
+  'jsx-a11y/label-has-associated-control': [ "error", {
+    required: {
+      some: [ "nesting", "id"  ]
+    }
+  }],
   #this line allows import type {yourTipe}
  '@typescript-eslint/consistent-type-imports': 'error',
   #allow imports
@@ -39,3 +45,9 @@ rules: {
     }
   ]
 }
+# these settings allow me to do absolute imports (also I need the baseURL int he tsconfig.json)
+settings: 
+  import/resolver:
+    node:
+      paths: ['src']
+      extensions: ['.js', '.jsx', '.ts', '.tsx']

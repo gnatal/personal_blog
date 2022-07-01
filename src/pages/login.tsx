@@ -1,9 +1,10 @@
 import React from 'react';
+import Login from '../components/Login';
 
-function Login() {
+function LoginPage() {
   return (
-    <p>Just a text login</p>
+    <Login />
   );
 }
 
-export default Login;
+export default LoginPage;
