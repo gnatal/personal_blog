@@ -20,11 +20,11 @@ export default function TextInput({
   const [rounds, setRounds] = useState('');
   useEffect(() => {
     let addedClasses = '';
-    if (roundBottom) {
-      addedClasses = `${addedClasses} round-t-md`;
-    }
     if (roundTop) {
-      addedClasses = `${addedClasses} round-b-md`;
+      addedClasses = `${addedClasses} rounded-t-md`;
+    }
+    if (roundBottom) {
+      addedClasses = `${addedClasses} rounded-b-md`;
     }
     setRounds(addedClasses);
   }, []);

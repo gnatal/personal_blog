@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import LoginHeader from '..';
 
 describe('Testing login header', () => {
-  const singupUrl = '!#';
+  const singupUrl = '/signup';
 
   test('It should have a link to sign up page', () => {
     const { container } = render(<LoginHeader />);
