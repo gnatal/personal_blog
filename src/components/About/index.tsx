@@ -1,5 +1,5 @@
-import Banner from 'components/Banner';
 import React from 'react';
+import Banner from '../Banner';
 
 export default function About() {
   return (
