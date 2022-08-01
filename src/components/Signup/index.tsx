@@ -31,7 +31,6 @@ const passwordConfirmInputs = {
 export default function Signup() {
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log('Subimtintg');
   }
 
   return (

@@ -1,10 +1,10 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
-import About from '..';
+import Mission from '..';
 
 test('It should have only 1 h1 being the background ', () => {
   const { container } = render(
-    <About />,
+    <Mission />,
   );
   const divs = container.getElementsByTagName('p');
   expect(divs.length).toBe(1);
