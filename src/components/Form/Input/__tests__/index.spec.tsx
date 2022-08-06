@@ -1,11 +1,31 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import TextInput from '..';
+
+const passwordInputs = {
+  name: 'value1',
+  type: 'text',
+  placeholder: 'text',
+};
 
 describe('Testing input ', () => {
   test('It should render a input with type text', () => {
-    const { container } = render(<TextInput label="Value 1" elementId="value1" {...{ type: 'text' }} />);
-    const link = container.getElementsByTagName('input')[0];
-    expect(link.getAttribute('type')).toBe('text');
+    const { container, getByTestId } = render(<TextInput
+      label="value1"
+      elementId="value1"
+      register={() => { console.log('none'); }}
+      {...passwordInputs}
+      errors={{ value1: 'nothing' }}
+      roundBottom
+      validation={{}}
+      roundTop={false}
+    />);
+    fireEvent.input(getByTestId('value1'), {
+      target: {
+        value: 'name',
+      },
+    });
+    const input = container.getElementsByTagName('input')[0];
+    expect(input.value).toBe('name');
   });
 });
