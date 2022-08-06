@@ -1,30 +1,31 @@
 import React from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import SignupHeader from './SignupHeader';
 import LockIcon from '../Icons/LockIcons';
 import TextInput from '../Form/Input';
 import PrivacyPolicy from './PrivacyPolicy';
 
+interface SignupInputs {
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
 const emailInputs = {
   name: 'email',
   type: 'email',
-  autoComplete: 'email',
-  required: true,
   placeholder: 'email',
 };
 
 const passwordInputs = {
   name: 'password',
   type: 'password',
-  autoComplete: true,
-  required: true,
   placeholder: 'password',
 };
 
 const passwordConfirmInputs = {
   name: 'confirmPassword',
   type: 'password',
-  autoComplete: true,
-  required: true,
   placeholder: 'confirm password',
 };
 
@@ -33,6 +34,10 @@ export default function Signup() {
     e.preventDefault();
   }
 
+  const {
+    register, handleSubmit, watch, formState: { errors },
+  } = useForm<SignupInputs>();
+
   return (
     <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
@@ -40,9 +45,39 @@ export default function Signup() {
         <form className="mt-8 space-y-6" onSubmit={onSubmit}>
           <input type="hidden" name="remember" value="true" />
           <div className="rounded-md shadow-sm -space-y-px">
-            <TextInput label="Email address" elementId="email-address" {...emailInputs} roundBottom={false} roundTop />
-            <TextInput label="Password" elementId="password" {...passwordInputs} roundBottom={false} roundTop={false} />
-            <TextInput label="Confirm password" elementId="password" {...passwordConfirmInputs} roundBottom roundTop={false} />
+            <TextInput
+              label="Email address"
+              elementId="email-address"
+              {...emailInputs}
+              roundBottom={false}
+              roundTop
+              register={register}
+              name="email"
+              validation={{}}
+              errors={errors}
+            />
+            <TextInput
+              label="Password"
+              elementId="password"
+              {...passwordInputs}
+              register={register}
+              name="password"
+              roundBottom={false}
+              roundTop={false}
+              validation={{}}
+              errors={errors}
+            />
+            <TextInput
+              label="Password"
+              elementId="password"
+              {...passwordConfirmInputs}
+              register={register}
+              name="confirmPassword"
+              roundBottom
+              roundTop={false}
+              validation={{}}
+              errors={errors}
+            />
           </div>
           <PrivacyPolicy />
 
