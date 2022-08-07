@@ -1,7 +1,6 @@
 import type { FormEvent } from 'react';
 import React from 'react';
-import type { SubmitHandler } from 'react-hook-form';
-import { useForm } from 'react-hook-form';
+import { useForm, type SubmitHandler } from 'react-hook-form';
 
 import LockIcon from '../Icons/LockIcons';
 import Checkbox from '../Form/Checkbox';

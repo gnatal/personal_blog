@@ -6,7 +6,7 @@ export default function Layout({ children }: {children: any}) {
   return (
     <>
       <NavBar blogName="Blog do Natal" />
-      <main>
+      <main className="min-h-[80vh]">
         {children}
       </main>
       <Footer />
