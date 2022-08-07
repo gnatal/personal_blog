@@ -112,7 +112,9 @@ Array [
       </a>
     </div>
   </div>,
-  <main>
+  <main
+    className="min-h-[80vh]"
+  >
     <p>
        just a text
     </p>

@@ -1,13 +1,49 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import Signup from '..';
 
-describe('Testing login header', () => {
+describe('Sign up page', () => {
   const method = 'submit';
 
   test('It should have a link to sign up page', () => {
     const { container } = render(<Signup />);
     const link = container.getElementsByTagName('button')[0];
     expect(link.getAttribute('type')).toBe(method);
+  });
+});
+
+describe('Testing signup form', () => {
+
+  test('It fail in the confirm password', async () => {
+    const { container, getByTestId } = render(<Signup />);
+    const email = getByTestId('email-address');
+    const password = getByTestId('password');
+    const confirmPassword = getByTestId('confirm-password');
+    const submit = getByTestId('submit');
+
+    fireEvent.input(email, {
+      target: {
+        value:'gui@gmail.com'
+      }
+    });
+
+    fireEvent.input(password, {
+      target: {
+        value:'masterpassword'
+      }
+    });
+
+    fireEvent.input(confirmPassword, {
+      target: {
+        value:''
+      }
+    });
+
+    fireEvent.click(submit);
+
+    await waitFor(() => {
+      expect(getByTestId('confirm-password-error')).toBeInTheDocument();
+    });
+
   });
 });
