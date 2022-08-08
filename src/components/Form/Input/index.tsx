@@ -9,7 +9,6 @@ interface ITextInput {
     roundBottom?: boolean;
     register: any;
     errors: any;
-    validation: any,
     name: string;
 }
 
@@ -22,7 +21,6 @@ export default function TextInput({
   roundBottom = false,
   roundTop = false,
   errors,
-  validation,
   ...rest
 }:ITextInput) {
   const [rounds, setRounds] = useState('');
@@ -45,7 +43,7 @@ export default function TextInput({
         {label}
       </label>
       <input
-        {...register(name, { ...validation })}
+        {...register(name)}
         id={elementId}
         data-testid={elementId}
         className={`appearance-none rounded-none relative ${rounds} block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
@@ -53,7 +51,7 @@ export default function TextInput({
       />
       {errors[name] && (
         <span data-testid={`${elementId}-error`} className="text-red-500 text-sm italic">
-          Error this fied is required
+          {`Error: ${errors[name].message}`}
         </span>
       )}
     </div>

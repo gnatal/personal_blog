@@ -1,7 +1,8 @@
-import type { FormEvent } from 'react';
-import React from 'react';
+import React, { type FormEvent } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 
+import validation from '../../utils/validation';
 import LockIcon from '../Icons/LockIcons';
 import Checkbox from '../Form/Checkbox';
 import TextInput from '../Form/Input';
@@ -24,13 +25,11 @@ const passwordInputs = {
   placeholder: 'password',
 };
 
-const emailValidation = { required: true };
-const passwordValidation = { required: true, minLength: 8 };
-
 export default function Login() {
+  const formOptions = { resolver: yupResolver(validation.loginSchema) };
   const {
     register, handleSubmit, watch, formState: { errors },
-  } = useForm<LoginInputs>();
+  } = useForm<LoginInputs>(formOptions);
 
   const onSubmit:SubmitHandler<LoginInputs> = (data) => {
     console.log(data);
@@ -49,7 +48,6 @@ export default function Login() {
               register={register}
               {...emailInputs}
               errors={errors}
-              validation={emailValidation}
               roundBottom={false}
               roundTop
             />
@@ -60,7 +58,6 @@ export default function Login() {
               {...passwordInputs}
               errors={errors}
               roundBottom
-              validation={passwordValidation}
               roundTop={false}
             />
           </div>
