@@ -13,37 +13,35 @@ describe('Sign up page', () => {
 });
 
 describe('Testing signup form', () => {
-
   test('It fail in the confirm password', async () => {
     const { container, getByTestId } = render(<Signup />);
-    const email = getByTestId('email-address');
+    const email = getByTestId('email');
     const password = getByTestId('password');
-    const confirmPassword = getByTestId('confirm-password');
+    const confirmPassword = getByTestId('confirm_password');
     const submit = getByTestId('submit');
 
     fireEvent.input(email, {
       target: {
-        value:'gui@gmail.com'
-      }
+        value: 'gui@gmail.com',
+      },
     });
 
     fireEvent.input(password, {
       target: {
-        value:'masterpassword'
-      }
+        value: 'masterpassword',
+      },
     });
 
     fireEvent.input(confirmPassword, {
       target: {
-        value:''
-      }
+        value: '',
+      },
     });
 
     fireEvent.click(submit);
 
     await waitFor(() => {
-      expect(getByTestId('confirm-password-error')).toBeInTheDocument();
+      expect(getByTestId('confirm_password-error')).toBeInTheDocument();
     });
-
   });
 });
