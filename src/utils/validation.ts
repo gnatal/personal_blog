@@ -5,6 +5,7 @@ const loginSchema = yup.object().shape({
     .required('Password is required')
     .min(8, 'Password must be at least 8 char long'),
   email: yup.string()
+    .matches(/^\s+|\s+$/g, 'Emails cannot have any spaces')
     .required('Email is required'),
 });
 

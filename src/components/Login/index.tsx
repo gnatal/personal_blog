@@ -44,7 +44,7 @@ export default function Login() {
           <div className="rounded-md shadow-sm -space-y-px">
             <TextInput
               label="Email address"
-              elementId="email-address"
+              elementId="email"
               register={register}
               {...emailInputs}
               errors={errors}
