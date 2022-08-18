@@ -3,9 +3,13 @@
       "javascript",
       "javascriptreact",
       "typescript",
-      "typescriptreact",
+      "typescriptreact"
     ],
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true,
     },
+    "prettier.trailingComma": "all",
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "prettier.jsxSingleQuote": true
 }

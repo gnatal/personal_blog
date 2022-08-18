@@ -1,9 +1,8 @@
 import React from 'react';
+import Posts from 'components/Posts';
 
-function Posts() {
-  return (
-    <p>Just a text posts</p>
-  );
+function PostsPage() {
+  return <Posts />;
 }
 
-export default Posts;
+export default PostsPage;
