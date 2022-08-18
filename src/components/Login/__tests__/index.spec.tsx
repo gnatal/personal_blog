@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { findByTestId, fireEvent, render } from '@testing-library/react';
 import Login from '..';
 
 describe('Testing login header', () => {
@@ -14,7 +14,7 @@ describe('Testing login header', () => {
 
 describe('Testing login form', () => {
   test('It should fail due to email empty', async () => {
-    const { getByTestId } = render(<Login />);
+    const { container, getByTestId } = render(<Login />);
     const input1 = getByTestId('email');
     const input2 = getByTestId('password');
     const submit = getByTestId('submit');
@@ -33,13 +33,12 @@ describe('Testing login form', () => {
 
     fireEvent.click(submit);
 
-    await waitFor(() => {
-      expect(getByTestId('email-error')).toBeInTheDocument();
-    });
+    const emailError = await findByTestId(container ,'email-error');
+    expect(emailError.innerHTML).toBe('Error: Emails must be xxxx@domain.xxxx');
   });
 
   test('It should fail due to password empty', async () => {
-    const { getByTestId } = render(<Login />);
+    const { container, getByTestId } = render(<Login />);
     const input1 = getByTestId('email');
     const input2 = getByTestId('password');
     const submit = getByTestId('submit');
@@ -57,14 +56,12 @@ describe('Testing login form', () => {
     });
 
     fireEvent.click(submit);
+    const passwordError = await findByTestId(container ,'password-error');
+    expect(passwordError.innerHTML).toBe('Error: Password is required');
+});
 
-    await waitFor(() => {
-      expect(getByTestId('password-error')).toBeInTheDocument();
-    });
-  });
-
-  test('It should fail due to password not big enough', async () => {
-    const { getByTestId } = render(<Login />);
+test('It should fail due to password not big enough', async () => {
+    const { container, getByTestId } = render(<Login />);
     const input1 = getByTestId('email');
     const input2 = getByTestId('password');
     const submit = getByTestId('submit');
@@ -82,9 +79,8 @@ describe('Testing login form', () => {
     });
 
     fireEvent.click(submit);
-
-    await waitFor(() => {
-      expect(getByTestId('password-error')).toBeInTheDocument();
-    });
+    const passwordError = await findByTestId(container ,'password-error'); // this line here awaits the text to appear
+    expect(passwordError.innerHTML).toBe('Error: Password must be at least 8 char long');
+    
   });
 });
