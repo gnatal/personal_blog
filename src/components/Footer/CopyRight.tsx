@@ -5,9 +5,11 @@ const BRAND_NAME = 'Natal Inc';
 
 export default function Copyright() {
   return (
-    <div className="text-center p-4">
+    <div className='text-center p-4'>
       © 2022 Copyright:
-      <a className="text-white" href={COPY_RIGHT_LINK}>{BRAND_NAME}</a>
+      <a className='text-white' href={COPY_RIGHT_LINK}>
+        {BRAND_NAME}
+      </a>
     </div>
   );
 }

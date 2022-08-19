@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
 interface ITextInput {
-    elementId: string;
-    label: string;
-    // eslint-disable-next-line react/require-default-props
-    roundTop?: boolean;
-    // eslint-disable-next-line react/require-default-props
-    roundBottom?: boolean;
-    register: any;
-    errors: any;
-    name: string;
+  elementId: string;
+  label: string;
+  // eslint-disable-next-line react/require-default-props
+  roundTop?: boolean;
+  // eslint-disable-next-line react/require-default-props
+  roundBottom?: boolean;
+  register: any;
+  errors: any;
+  name: string;
 }
 
 // Remeber to find out a solution to deal with this bunch of classes
@@ -22,7 +22,7 @@ export default function TextInput({
   roundTop = false,
   errors,
   ...rest
-}:ITextInput) {
+}: ITextInput) {
   const [rounds, setRounds] = useState('');
   useEffect(() => {
     let addedClasses = '';
@@ -36,10 +36,7 @@ export default function TextInput({
   }, []);
   return (
     <div>
-      <label
-        htmlFor={elementId}
-        className="sr-only"
-      >
+      <label htmlFor={elementId} className='sr-only'>
         {label}
       </label>
       <input
@@ -50,7 +47,10 @@ export default function TextInput({
         {...rest}
       />
       {errors[name] && (
-        <span data-testid={`${elementId}-error`} className="text-red-500 text-sm italic">
+        <span
+          data-testid={`${elementId}-error`}
+          className='text-red-500 text-sm italic'
+        >
           {`Error: ${errors[name].message}`}
         </span>
       )}

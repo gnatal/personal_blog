@@ -2,9 +2,7 @@ import React from 'react';
 import Signup from '../components/Signup';
 
 function SignupPage() {
-  return (
-    <Signup />
-  );
+  return <Signup />;
 }
 
-export default Signup;
+export default SignupPage;

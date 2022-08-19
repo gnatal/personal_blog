@@ -5,15 +5,11 @@ import mocks from '../mocks';
 
 afterAll(cleanup);
 test('It should print a card cat', () => {
-  const { container } = render(
-    <Card {...mocks.cardMock} />,
-  );
+  const { container } = render(<Card {...mocks.cardMock} />);
   expect(container.getElementsByTagName('img').length).toBe(1);
 });
 
 test('It should have no span', () => {
-  const { container } = render(
-    <Card {...mocks.cardMock} />,
-  );
+  const { container } = render(<Card {...mocks.cardMock} />);
   expect(container.getElementsByTagName('span').length).toBe(0);
 });

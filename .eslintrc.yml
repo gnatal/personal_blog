@@ -14,40 +14,36 @@ parserOptions:
 plugins:
   - react
   - '@typescript-eslint'
-rules: {
-  quotes: ['error', 'single'],
+rules:
+  quotes: ['error', 'single']
   # we want to force semicolons
-  semi: ['error', 'always'],
+  semi: ['error', 'always']
   # we use 2 spaces to indent our code
-  indent: ['error', 2],
+  indent: ['error', 2]
   # we want to avoid extraneous spaces
-  no-multi-spaces: ['error'],
-  react/jsx-filename-extension: [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
+  no-multi-spaces: ['error']
+  operator-linebreak: ['error', 'none']
+  react/jsx-filename-extension:
+    [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }]
   #this line allows spread operator
-  react/jsx-props-no-spreading: 'off',
+  react/jsx-props-no-spreading: 'off'
   jsx-quotes: ['error', 'prefer-single']
   #this line allows using label for inputs
-  'jsx-a11y/label-has-associated-control': [ "error", {
-    required: {
-      some: [ "nesting", "id"  ]
-    }
-  }],
+  jsx-a11y/label-has-associated-control:
+    ['error', { required: { some: ['nesting', 'id'] } }]
   #this line allows import type {yourTipe}
- '@typescript-eslint/consistent-type-imports': 'error',
-  #allow imports
-  import/extensions: [
-    "error",
-    "ignorePackages",
-    {
-      "js": "never",
-      "jsx": "never",
-      "ts": "never",
-      "tsx": "never"
-    }
-  ]
-}
+  '@typescript-eslint/consistent-type-imports':
+    'error'
+    #allow imports,,,,
+  import/extensions:
+    [
+      'error',
+      'ignorePackages',
+      { 'js': 'never', 'jsx': 'never', 'ts': 'never', 'tsx': 'never' },
+    ]
+
 # these settings allow me to do absolute imports (also I need the baseURL int he tsconfig.json)
-settings: 
+settings:
   import/resolver:
     node:
       paths: ['src']

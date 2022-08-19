@@ -1,9 +1,9 @@
 import React from 'react';
-import Card from '../../Card';
+import Card from 'components/Card';
 
-export default function SecondSession() {
+export default function PostsGrid() {
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-3 bg-gray-100 '>
+    <div className='grid-cols-1 sm:grid-cols-3'>
       <Card
         imageAlt='Alt'
         imageSrc='/images/cat1.jpeg'

@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar';
+import PostsGrid from './PostsGrid';
 
 export default function Posts() {
   return (
@@ -7,9 +8,7 @@ export default function Posts() {
       <div>
         <SearchBar />
       </div>
-      <div>
-        <p>Just a post</p>
-      </div>
+      <PostsGrid />
       <div>Another Post</div>
     </>
   );
