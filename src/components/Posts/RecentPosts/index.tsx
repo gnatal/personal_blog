@@ -7,7 +7,7 @@ export default function RecentPosts() {
         <a className='px-2 py-1 bg-gray-600 text-sm text-green-100 rounded hover:bg-gray-500' href='!#'>Laravel</a>
       </div>
       <div className='mt-4'>
-        <a className='text-lg text-gray-700 font-medium hover:underline' href='!#'>Build Your New Idea with Laravel Freamwork.</a>
+        <a data-testid='title' className='text-lg text-gray-700 font-medium hover:underline' href='!#'>Build Your New Idea with Laravel Freamwork.</a>
       </div>
       <div className='flex justify-between items-center mt-4'>
         <div className='flex items-center'>

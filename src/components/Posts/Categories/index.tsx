@@ -3,7 +3,7 @@ import React from 'react';
 export default function Categories() {
   return (
     <div className='flex flex-col bg-white px-4 py-6 max-w-sm mx-auto rounded-lg shadow-md'>
-      <ul className=''>
+      <ul data-testid='list-controller'>
         <li>
           <a className='text-gray-700 font-bold mx-1 hover:text-gray-600 hover:underline' href='!#'>- AWS</a>
         </li>

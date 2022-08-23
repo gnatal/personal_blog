@@ -5,7 +5,7 @@ export default function Pagination() {
 
     <ul className='flex'>
       <li className='mx-1 px-3 py-2 bg-gray-200 text-gray-500 rounded-lg'>
-        <a className='flex items-center font-bold' href='!#'>previous</a>
+        <a data-testid='previous' className='flex items-center font-bold' href='!#'>previous</a>
       </li>
       <li className='mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg'>
         <a className='font-bold' href='!#'>1</a>
@@ -17,7 +17,7 @@ export default function Pagination() {
         <a className='font-bold' href='!#'>3</a>
       </li>
       <li className='mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg'>
-        <a className='flex items-center font-bold' href='!#'>Next</a>
+        <a data-testid='next' className='flex items-center font-bold' href='!#'>Next</a>
       </li>
     </ul>
   );
