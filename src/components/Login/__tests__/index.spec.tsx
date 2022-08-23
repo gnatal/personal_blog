@@ -33,7 +33,7 @@ describe('Testing login form', () => {
 
     fireEvent.click(submit);
 
-    const emailError = await findByTestId(container ,'email-error');
+    const emailError = await findByTestId(container, 'email-error');
     expect(emailError.innerHTML).toBe('Error: Emails must be xxxx@domain.xxxx');
   });
 
@@ -56,11 +56,11 @@ describe('Testing login form', () => {
     });
 
     fireEvent.click(submit);
-    const passwordError = await findByTestId(container ,'password-error');
+    const passwordError = await findByTestId(container, 'password-error');
     expect(passwordError.innerHTML).toBe('Error: Password is required');
-});
+  });
 
-test('It should fail due to password not big enough', async () => {
+  test('It should fail due to password not big enough', async () => {
     const { container, getByTestId } = render(<Login />);
     const input1 = getByTestId('email');
     const input2 = getByTestId('password');
@@ -79,8 +79,9 @@ test('It should fail due to password not big enough', async () => {
     });
 
     fireEvent.click(submit);
-    const passwordError = await findByTestId(container ,'password-error'); // this line here awaits the text to appear
-    expect(passwordError.innerHTML).toBe('Error: Password must be at least 8 char long');
-    
+    const passwordError = await findByTestId(container, 'password-error'); // this line here awaits the text to appear
+    expect(passwordError.innerHTML).toBe(
+      'Error: Password must be at least 8 char long',
+    );
   });
 });

@@ -10,16 +10,20 @@ const passwordInputs = {
 
 describe('Testing input ', () => {
   test('It should render a input with type text', () => {
-    const { container, getByTestId } = render(<TextInput
-      label="value1"
-      elementId="value1"
-      register={() => { console.log('none'); }}
-      {...passwordInputs}
-      errors={{ value1: 'nothing' }}
-      roundBottom
-      validation={{}}
-      roundTop={false}
-    />);
+    const { container, getByTestId } = render(
+      <TextInput
+        label='value1'
+        elementId='value1'
+        register={() => {
+          console.log('none');
+        }}
+        {...passwordInputs}
+        errors={{ value1: 'nothing' }}
+        roundBottom
+        validation={{}}
+        roundTop={false}
+      />,
+    );
     fireEvent.input(getByTestId('value1'), {
       target: {
         value: 'name',
