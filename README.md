@@ -21,6 +21,6 @@ A template for a Personal blog
     <code>npm run test:unit</code>
 </div>
 <div>
-    <h1>Where you can test it ?</h1>
-    <p>Future vercel Link</p>
+    <h1>You can test it in the following link</h1>
+    <a href='https://personal-blog-three-lyart.vercel.app/'>Personal blog</a>
 </div>
