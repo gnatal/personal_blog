@@ -9,7 +9,6 @@ export default function FacebookIcon() {
     >
       <svg
         aria-hidden='true'
-        focusable='false'
         data-prefix='fab'
         data-icon='facebook-f'
         className='w-2 h-full mx-auto'

@@ -9,7 +9,6 @@ export default function InstagramIcon() {
     >
       <svg
         aria-hidden='true'
-        focusable='false'
         data-prefix='fab'
         data-icon='instagram'
         className='w-3 h-full mx-auto'
