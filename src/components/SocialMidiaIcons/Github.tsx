@@ -9,7 +9,6 @@ export default function GithubIcon() {
     >
       <svg
         aria-hidden='true'
-        focusable='false'
         data-prefix='fab'
         data-icon='github'
         className='w-3 h-full mx-auto'

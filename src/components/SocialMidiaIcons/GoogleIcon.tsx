@@ -9,7 +9,6 @@ export default function GoogleIcon() {
     >
       <svg
         aria-hidden='true'
-        focusable='false'
         data-prefix='fab'
         data-icon='google'
         className='w-3 h-full mx-auto'

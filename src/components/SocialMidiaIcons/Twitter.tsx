@@ -9,7 +9,6 @@ export default function TwitterIcon() {
     >
       <svg
         aria-hidden='true'
-        focusable='false'
         data-prefix='fab'
         data-icon='twitter'
         className='w-3 h-full mx-auto'

@@ -9,7 +9,6 @@ export default function LinkiedInIcon() {
     >
       <svg
         aria-hidden='true'
-        focusable='false'
         data-prefix='fab'
         data-icon='linkedin-in'
         className='w-3 h-full mx-auto'
